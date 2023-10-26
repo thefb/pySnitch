@@ -1,0 +1,31 @@
+    parameters:
+      - in: formData
+        name: file1
+        type: file
+        required: true
+        description: The first Excel file
+      - in: formData
+        name: file2
+        type: file
+        required: true
+        description: The second Excel file
+      - in: formData
+        name: file3
+        type: file
+        required: true
+        description: The third Excel file
+    responses:
+      200:
+        description: Files uploaded successfully
+        examples:
+          application/json:
+            message: Files uploaded successfully!
+      400:
+        description: Bad Request (missing files, no file selected, or invalid file type)
+        examples:
+          application/json:
+            error: "Missing files"
+          application/json:
+            error: "No selected file"
+          application/json:
+            error: "Invalid file type"
